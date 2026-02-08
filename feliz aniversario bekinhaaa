@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Aniversário 🎉</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      max-width: 420px;
+      z-index: 2;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #333;
+    }
+
+    .final {
+      margin-top: 15px;
+      font-size: 16px;
+      color: #ff4d6d;
+      font-style: italic;
+    }
+
+    /* Corações caindo */
+    .heart {
+      position: absolute;
+      top: -10px;
+      font-size: 20px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Feliz Aniversário! 🎂</h1>
+    <p>
+      Que seu dia seja cheio de alegria, sorrisos e momentos incríveis.
+      Você merece tudo de bom hoje e sempre 💖
+    </p>
+
+    <div class="final">
+      (não vejo a hora de te beijar e sentir que estamos unidos de corpo e alma novamente)
+    </div>
+  </div>
+
+  <script>
+    function criarCoracao() {
+      const coracao = document.createElement("div");
+      coracao.classList.add("heart");
+      coracao.innerHTML = "💗";
+      coracao.style.left = Math.random() * 100 + "vw";
+      coracao.style.animationDuration = (3 + Math.random() * 3) + "s";
+      document.body.appendChild(coracao);
+
+      setTimeout(() => {
+        coracao.remove();
+      }, 6000);
+    }
+
+    setInterval(criarCoracao, 300);
+  </script>
+
+</body>
+</html>
